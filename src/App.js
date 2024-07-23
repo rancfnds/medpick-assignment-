@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+// src/App.jsx (or src/App.js)
+import React from 'react';
+import './index.css'; // or the path to your CSS file
+import Sidebar from './Components/Sidebar';
+import Header from './Components/Header';
+import AssetTable from './Components/AssetsTable';
+import Datacount from './Components/Datacount';
+import SearchBar from './Components/SearchBar';
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="flex">
+      <Sidebar />
+      <div className="flex-grow ml-5 mr-5">
+        <Header />
+        <Datacount />
+        <SearchBar/>
+        <AssetTable />
+      </div>
     </div>
   );
-}
+};
 
 export default App;
